@@ -35,11 +35,9 @@ onAuthStateChanged(auth, (user) => {
         if (snapshot.exists()) {
           const userData = snapshot.data();
           document.getElementById("userName").innerText = userData.nome || "Usuário";
-        } else {
-          console.error("Usuário não encontrado no Firestore.");
-        }
+        } 
       })
-      .catch((error) => console.error("Erro ao buscar dados do usuário:", error));
+     
   } else {
     loginBtn.style.display = "block";
     profileImage.style.display = "none";

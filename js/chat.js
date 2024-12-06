@@ -125,8 +125,6 @@ function sendMessage() {
         .then(() => {
             messageInput.value = '';
         })
-        .catch((error) => {
-            console.error('Erro ao enviar mensagem:', error);
-        });
+        
     }
 }

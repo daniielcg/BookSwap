@@ -34,7 +34,7 @@ function loadProfileImage(userId) {
 
                 // Verificar se existe uma URL de imagem guardada no Firestore
                 if (userData.img) {
-                    console.log('URL da imagem:', userData.img);
+                   
 
                     // Se a imagem for do Firebase Storage, buscar a URL de download
                     if (userData.img.includes("firebase")) {
@@ -44,29 +44,23 @@ function loadProfileImage(userId) {
                                 // Atualizar o src da imagem para a URL do Firebase Storage
                                 profileImage.src = url;
                                 profileImage.style.display = 'block'; // Tornar a imagem visível
-                                console.log('Imagem de perfil carregada do Firebase Storage:', url);
+                               
                             })
-                            .catch((error) => {
-                                console.error('Erro ao carregar a imagem do Firebase Storage:', error);
-                            });
+                           
                     } else {
                         // Caso a imagem não seja do Firebase Storage, usar a URL diretamente
                         profileImage.src = userData.img;
                         profileImage.style.display = 'block';
-                        console.log('Imagem de perfil carregada:', userData.img);
+                       
                     }
                 } else {
-                    console.log('Nenhuma imagem de perfil encontrada para este usuário.');
+                    
                     profileImage.src = "../img/user.jpg"; // Fallback para a imagem padrão
                     profileImage.style.display = 'block'; // Tornar a imagem visível
                 }
-            } else {
-                console.log('Documento do utilizador não encontrado no Firestore.');
-            }
+            } 
         })
-        .catch((error) => {
-            console.error('Erro ao carregar a imagem de perfil:', error);
-        });
+       
 }
 
 // Carregar a imagem de perfil ao carregar a página
@@ -84,9 +78,7 @@ window.addEventListener('load', function () {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 loadProfileImage(user.uid);
-            } else {
-                console.log('Nenhum utilizador autenticado.');
-            }
+            } 
         });
     }
 });

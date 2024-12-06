@@ -58,22 +58,12 @@ function loadConversations() {
                                 listItem.classList.add("conversa-item");
                                 listItem.appendChild(link);
                                 conversasList.appendChild(listItem);
-                            } else {
-                                console.log("Usuário não encontrado!");
-                            }
-                        }).catch((error) => {
-                            console.error("Erro ao carregar o nome do usuário: ", error);
-                        });
+                            } 
+                        })
                     });
                 }
-            }).catch((error) => {
-                console.error("Erro ao carregar as conversas: ", error);
-                conversasList.innerHTML = "<p>Ocorreu um erro ao carregar suas conversas.</p>";
-            });
-        } else {
-            alert("Por favor, faça login para acessar suas conversas.");
-            window.location.href = "../html/login.html"; // Redirecionar para login
-        }
+            })
+        } 
     });
 }
 

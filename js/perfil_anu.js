@@ -84,12 +84,8 @@ function displayUserAds() {
 
                             // Adiciona o elemento à página
                             document.getElementById('bookListSection').appendChild(adElement);
-                        } else {
-                            console.error("Dados do usuário não encontrados.");
-                        }
-                    }).catch((error) => {
-                        console.error('Erro ao recuperar dados do usuário:', error);
-                    });
+                        } 
+                    })
                 });
             });
         } else {
@@ -104,7 +100,7 @@ function loadUserProfile() {
     const uid = getUidFromUrl(); // Obtém o UID
 
     if (!uid) {
-        console.error("UID não encontrado na URL!");
+        
         return;
     }
 
@@ -119,15 +115,9 @@ function loadUserProfile() {
                 document.getElementById('morada-text').innerText = userData.morada;
                 document.getElementById('bio-text').innerText = userData.bio;
                 document.getElementById('dataCriacao').innerText = userData.dataCriacao;
-            } else {
-                console.error("Alguns dados do usuário estão faltando!");
-            }
-        } else {
-            console.log("Usuário não encontrado no Firestore!");
-        }
-    }).catch((error) => {
-        console.error('Erro ao recuperar dados do usuário:', error);
-    });
+            } 
+        } 
+    })
 }
 
 // Chama as funções ao carregar a página

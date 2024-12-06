@@ -165,6 +165,18 @@ body {
     text-align: center;
 }
 
+.form.signup {
+    display: none; /* Inicialmente escondido */
+    visibility: visible; /* Certifique-se de que o conteúdo é visível */
+    opacity: 1; /* Certifique-se de que o formulário não está com opacidade 0 */
+    transition: opacity 0.5s ease; /* Animação para tornar a transição suave */
+  }
+  
+  .form.signup.active {
+    display: block; /* Exibe o formulário quando a classe 'active' for adicionada */
+    opacity: 1;
+  }
+  
 .go-back {
     position: fixed;
     bottom: 20px;

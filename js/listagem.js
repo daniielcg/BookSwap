@@ -88,19 +88,13 @@ function displayAllAds() {
                                 bookListSection.appendChild(adElement);
                             });
                         });
-                    } else {
-                        console.log('Usuário não encontrado no Firestore.');
-                    }
-                }).catch((error) => {
-                    console.error('Erro ao buscar os dados do usuário:', error);
-                });
+                    } 
+                })
             });
         } else {
             bookListSection.innerHTML = '<p>Nenhum anúncio encontrado.</p>';
         }
-    }).catch((error) => {
-        console.error('Erro ao recuperar os anúncios:', error);
-    });
+    })
 }
 
 auth.onAuthStateChanged(user => {
@@ -137,7 +131,7 @@ window.contactUser = function (sellerId) {
                         users: [currentUserId, sellerId],
                         createdAt: serverTimestamp()
                     }).then(() => {
-                        console.log("Chat criado com sucesso!");
+                        
 
                         // Adicionar chatId ao perfil do usuário autenticado
                         addChatToUser(currentUserId, chatId);
@@ -145,16 +139,12 @@ window.contactUser = function (sellerId) {
                         addChatToUser(sellerId, chatId);
 
                         window.location.href = `../html/chat.html?chatId=${chatId}`;
-                    }).catch((error) => {
-                        console.error("Erro ao criar o chat:", error);
-                    });
+                    })
                 } else {
-                    console.log("Chat já existe, redirecionando...");
+                    
                     window.location.href = `../html/chat.html?chatId=${chatId}`;
                 }
-            }).catch((error) => {
-                console.error("Erro ao verificar a existência do chat:", error);
-            });
+            })
         } else {
             alert("Por favor, faça login para iniciar uma conversa.");
         }
@@ -166,9 +156,7 @@ function addChatToUser(userId, chatId) {
     const userRef = doc(firestore, 'users', userId);
     updateDoc(userRef, {
         chats: arrayUnion(chatId)
-    }).catch((error) => {
-        console.error("Erro ao adicionar chat ao perfil do usuário:", error);
-    });
+    })
 }
 
 document.addEventListener("DOMContentLoaded", () => {

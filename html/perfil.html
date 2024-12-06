@@ -205,12 +205,8 @@ submitButton.addEventListener('click', function (event) {
                                 }, 500); // Duração do fade-out (500ms)
                             }, 3000); // 3 segundos de exibição
                         })
-                        .catch((error) => {
-                            console.error('Erro ao salvar informações:', error);
-                        });
-                }).catch((error) => {
-                    console.error('Erro ao obter URL da imagem:', error);
-                });
+                       
+                })
             }).catch((error) => {
                 console.error('Erro ao fazer upload da imagem:', error);
             });
@@ -254,7 +250,7 @@ submitButton.addEventListener('click', function (event) {
                     // Upload da imagem
                     const imageRef = storageRef(storage, 'images/' + imageFile.name);
                     uploadBytes(imageRef, imageFile).then(() => {
-                        console.log('Imagem enviada com sucesso!');
+                       
                         return getDownloadURL(imageRef);
                     }).then((imageURL) => {
                         saveMessages(name, msgContent, bookType, imageURL);
@@ -263,9 +259,7 @@ submitButton.addEventListener('click', function (event) {
                             document.querySelector(".alert").style.display = "none";
                         }, 3000);
                         document.getElementById("contactForm").reset();
-                    }).catch((error) => {
-                        console.error('Erro ao enviar a imagem ou obter o URL:', error);
-                    });
+                    })
                 }
                 const saveMessages = (name, msgContent, bookType, imageURL) => {
                     const userId = auth.currentUser.uid;

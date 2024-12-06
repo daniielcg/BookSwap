@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (user) {
             const uid = user.uid; // Obter o UID do utilizador autenticado
-            console.log("UID do utilizador autenticado:", uid); // Exibe o UID no console
+            
 
             loginBtn.style.display = "none"; // Esconde o botão de login
             profileLink.style.display = "inline"; // Mostra o link do perfil
@@ -48,9 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             signOut(auth).then(() => {
                 // Logout bem-sucedido
                 window.location.href = "../html/index.html"; // Redirecionar para a página inicial após logout
-            }).catch((error) => {
-                console.error("Erro ao sair:", error);
-            });
+            })
         });
     }
 
@@ -128,3 +126,5 @@ resetForm.addEventListener("submit", function (event) {
   
 
 });
+
+
