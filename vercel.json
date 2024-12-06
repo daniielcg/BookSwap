@@ -14,7 +14,7 @@
         "use": "@vercel/static"
       },
       {
-        "src": "imag/**/*",
+        "src": "img/**/*",
         "use": "@vercel/static"
       }
     ],
@@ -28,8 +28,8 @@
         "dest": "/js/$1"
       },
       {
-        "src": "/imag/(.*)",
-        "dest": "/images/$1"
+        "src": "/img/(.*)",
+        "dest": "/img/$1"
       },
       {
         "src": "/(.*)",
