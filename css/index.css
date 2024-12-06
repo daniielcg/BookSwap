@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #ffefd5;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+  }
+  
+li, a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #987654;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px #fff solid;
+    
+    
+}
+
+.Logo {
+    cursor: pointer;
+    color: #987654;
+    margin-right: auto;
+}
+
+.nav__links {
+    list-style: none;
+    margin-right: 1rem;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: #522f14;
+}
+
+button {
+    background-color: #987654;
+    color: white;
+    padding: 15px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    
+
+   
+}
+
+button:hover {
+    background-color: #987654;
+    transform: translateY(-2px);
+}
+
+section {
+   
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tittle {
+    font-size: 30px;
+    margin: 2rem 0rem;
+}
+
+#banner {
+    background: linear-gradient(rgba(0,0,0,0.5), #987654), url(../img/female-student-sitting-front-book-shelves-college-library-reading-book_132358-27275.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-text {
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+    background: none;
+}
+
+.banner-text h1 {
+    font-size: 80px;
+    margin: 0;
+    background: none;
+}
+
+.banner-text p {
+    font-size: 22px;
+    font-style: italic;
+    margin-top: 10px;
+    background: none;
+}
+
+#feature{
+
+    width: 100%;
+    padding: 70px 0;
+}
+
+.title-text{
+    text-align: center;
+    padding-bottom: 40px;
+
+}
+
+.title-text p {
+
+    margin: auto;
+    font-size: 20px;
+    color: #987654;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin-top: 3rem;
+}
+.title-text p::after{
+
+content:'';
+width: 50px;
+height: 35px;
+background: linear-gradient(#987654,#f5deb3);
+position: absolute;
+top: -20px;
+left: 0;
+z-index: -1;
+transform: rotate(10deg);
+border-top-left-radius: 35px;
+border-bottom-right-radius: 35px;
+}
+
+.title-text h1 {
+
+    font-size: 3rem;
+    color: #987654;
+    margin-bottom: 4rem;
+}
+
+.feature-box{
+
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+
+}
+
+.features{
+
+    flex-basis: 50%;
+}
+
+.features-img{
+
+    flex-basis: 40%;
+    margin: auto;
+
+
+}
+
+.features-img img{
+
+    width: 90%;
+    margin-left: 5rem;
+    border-radius: 10px;
+    
+
+    
+
+}
+
+.features h1{
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 600 ;
+    color: #987654;
+    
+    
+
+}
+
+.feature-desc{
+    display: flex;
+    align-items: center;
+    color: #987654;
+    margin-bottom: 40px;
+}
+
+.feature-icon{
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 8px;
+    color: #987654;
+
+    
+}
+
+.feature-text p{
+    padding: 0 20px;
+    text-align: center;
+    text-align: justify;
+
+
+
+}
+
+
+#type {
+    width: 100%;
+    padding: 70px 0;
+    
+}
+
+.title-text {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.title-text p {
+    font-size: 2em; 
+    font-weight: bold; 
+    color: #987654; 
+}
+
+.type-box {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+}
+
+.single-type {
+    flex-basis: 48%;
+    text-align: center;
+    border-radius: 10px; 
+    margin-bottom: 20px;
+    color: #987654;
+    background-color: #efdecd; 
+    padding: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s; 
+}
+
+.single-type:hover {
+    transform: translateY(-5px);
+}
+
+.single-type h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px; 
+    color: #987654;
+    background-color: #efdecd; 
+}
+
+.single-type p {
+    font-size: 1em; 
+    color: #987654;
+    background-color: #efdecd; 
+}
+
+#join-community {
+  
+    padding: 50px 0;
+    text-align: center;
+}
+
+.join-text {
+    max-width: 800px;
+    margin: auto;
+}
+
+.join-text h2 {
+    font-size: 2.5em;
+    color: #987654;
+    margin-bottom: 20px;
+}
+
+.join-text p {
+    font-size: 1.2em;
+    color: #987654;
+    margin-bottom: 30px;
+}
+
+.register-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color:#987654;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 4rem;
+}
+
+.register-button:hover {
+    background-color: #987654;
+    transform: translateY(-3px);
+}
+   
+
+    .profile {
+        position: relative;
+    }
+
+    .profile img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        border: 1px solid #987654;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        width: 200px;
+        display: none;
+        padding: 10px;
+    }
+    
+    .dropdown.active {
+        display: block;
+    }
+    
+    .dropdown a {
+        display: flex;
+        
+        align-items: center;
+        padding: 10px 0;
+        text-decoration: none;
+        color: #987654;
+        font-size: 14px;
+    }
+    
+    .dropdown a .icon {
+        margin-right: 20px;
+        color: #987654;
+    }
+    
+    
+    .help-item {
+        border-bottom: 1px solid #987654; 
+       margin-bottom: 0.6rem;
+    }
+    
+    #logout-btn {
+        margin-top: 4rem; 
+    }
+    
+
+/* Para dispositivos grandes (a partir de 1200px) */
+@media (max-width: 1200px) {
+    .feature-box {
+        width: 90%; /* Tornar a caixa de recursos mais estreita */
+    }
+    
+    .single-type {
+        flex-basis: 45%; /* Ajustar a largura do tipo único */
+    }
+}
+
+/* Para tablets e dispositivos menores (a partir de 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Logo ficará centralizada */
+    .Logo {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    /* Navegação em bloco (vertical) */
+    .nav__links {
+        display: block;
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    .nav__links li, .h1{
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    /* Ajustar layout das caixas de recursos */
+    .feature-box {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .features, .features-img, .single-type {
+        flex-basis: 100%; /* Ajusta os itens para ocupar 100% da largura */
+    }
+
+    .single-type {
+        margin: 10px 0;
+    }
+
+    .join-text {
+        padding: 0 20px;
+    }
+
+    .banner-text h1 {
+        font-size: 50px;
+    }
+
+    .banner-text p {
+        font-size: 18px;
+    }
+}
+
+/* Para dispositivos móveis (a partir de 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav__links {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .nav__links li {
+        padding: 8px 0;
+    }
+
+    .feature-box, .type-box {
+        width: 100%;
+    }
+
+    .single-type {
+        flex-basis: 100%;
+    }
+
+    .banner-text h1 {
+        font-size: 30px;
+    }
+
+    .banner-text p {
+        font-size: 16px;
+    }
+
+    /* Ajuste do botão em dispositivos móveis */
+    button {
+        padding: 12px 18px;
+        font-size: 14px;
+        width: 100%;
+    }
+}
+
+/* Estilos Responsivos Adicionais */
+@media (max-width: 768px) {
+    /* Modificar layout das caixas de recursos */
+    .feature-box, .type-box {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .single-type {
+        margin: 10px 0;
+        flex-basis: 90%;
+    }
+
+    .join-text {
+        padding: 0 20px;
+    }
+}
+

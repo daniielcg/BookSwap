@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Perfil</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+
+
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#" id="perfil-link" class="active" onclick="showSection('perfil')">Perfil</a></li>
+                <li><a href="#" id="postagens-link" onclick="showSection('postagens')">Adicionar Livro</a>
+                    <!-- Submenu para 'Postagens' -->
+                    <ul class="submenu">
+                        <li><a href="#" id="hist-link" onclick="showSection('hist')">Histórico</a></li>
+                    </ul>
+                </li>
+
+                </li>
+
+                <div class="go-back-1">
+                    <button onclick="goBack()">Voltar</button>
+                </div>
+            </ul>
+        </nav>
+
+
+        <div class="main-content">
+            <section id="perfil" class="section active">
+
+                <div class="profile-photo">
+                    <img id="profile-image" src="default-profile.jpg" alt="Foto de Perfil">
+                    <input type="file" id="upload-photo" accept="image/*" onchange="changeProfilePhoto(event)">
+                    <button id="save-photo" style="display: none;">Salvar</button>
+                </div>
+
+                <div class="profile-info">
+                    <form>
+                        <label for="bio">Bio:</label>
+                        <textarea id="bio-text"></textarea>
+
+
+                        <label for="morada">Morada:</label>
+                        <textarea id="morada-text"></textarea>
+                        <button type="submit">Salvar</button>
+                    </form>
+                </div>
+
+                <p class="confirmation-message" id="confirmation-message" style="display: none;">Informações guardadas
+                    com sucesso!</p>
+            </section>
+
+
+
+            <script src="../js/register.js"></script>
+
+
+
+
+
+            <section id="postagens" class="section">
+                <section class="add-book-section">
+
+                    <div class="container">
+                        <form action="" id="contactForm">
+                            <div class="alert" id="successMessage" style="display: none;">Postagem realizada com
+                                sucesso!</div>
+
+                            <div class="inputBox">
+                                <input type="text" id="name" placeholder="Nome" />
+                            </div>
+
+
+                            <div class="inputBox">
+                                <textarea id="msgContent" cols="30" rows="10" placeholder="Descrição"></textarea>
+                            </div>
+
+                            <div class="inputBox">
+                                <label for="bookType">Tipo de Livro:</label>
+                                <select id="bookType">
+                                    <option value="">Selecione um tipo...</option>
+                                    <option value="Ficção">Ficção</option>
+                                    <option value="Não-Ficção">Não-Ficção</option>
+                                    <option value="Fantasia">Fantasia</option>
+                                    <option value="Biografia">Biografia</option>
+                                    <option value="Mistério">Mistério</option>
+                                    <option value="Ficção Científica">Ficção Científica</option>
+                                    <option value="Romance">Romance</option>
+                                </select>
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="file" id="image" accept="image/*" />
+                            </div>
+
+                            <div class="inputBox">
+                                <button type="submit">Enviar</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                    <section>
+
+
+
+                    </section>
+                </section>
+
+
+            </section>
+
+            <section id="hist" class="section">
+                <h1 style="text-align: center; margin-top: 2rem; font-size: 2rem; margin-bottom: 2rem;">Histórico de
+                    postagens
+                </h1>
+
+                <!-- Secção onde os livros serão postados -->
+                <section id="book-list" class="book-list">
+                    <!-- Os livros do histórico de postagens serão exibidos aqui -->
+                </section>
+            </section>
+
+            <script type="module" src="../js/all.js"></script>
+            <script type="module">
+                import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js';
+                import { getDatabase, ref, push, get, remove } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js';
+                import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-storage.js';
+                import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js';
+                import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js';
+
+                // Configuração do Firebase
+                const firebaseConfig = {
+                    apiKey: "AIzaSyAg_fxX0Oqd9kjQqRWEBvABInr30fgUomM",
+                    authDomain: "login-e-register-b34e7.firebaseapp.com",
+                    databaseURL: "https://login-e-register-b34e7-default-rtdb.europe-west1.firebasedatabase.app",
+                    projectId: "login-e-register-b34e7",
+                    storageBucket: "login-e-register-b34e7.appspot.com",
+                    messagingSenderId: "408660648165",
+                    appId: "1:408660648165:web:d3192dfe1812d84bdbb40c",
+                    measurementId: "G-SRSCS6VEDV"
+                };
+
+                // Inicializar Firebase
+                const app = initializeApp(firebaseConfig);
+                const database = getDatabase(app);
+                const storage = getStorage(app);
+                const auth = getAuth();
+                const db = getFirestore(app);
+
+
+                // Submit button event listener
+const submitButton = document.querySelector('form button[type="submit"]');
+submitButton.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    // Inputs
+    const bio = document.getElementById('bio-text').value;
+    const morada = document.getElementById('morada-text').value;
+    const fileInput = document.getElementById('upload-photo');
+    const file = fileInput.files[0]; // Obtém o arquivo da imagem
+
+    // Verificar se o utilizador está autenticado
+    const user = auth.currentUser;
+    if (user) {
+        // Referência ao documento do utilizador no Firestore
+        const userDocRef = doc(db, "users", user.uid);
+
+        // Objeto para armazenar os campos a serem atualizados
+        const updateData = {};
+
+        // Apenas adicionar campos preenchidos ao updateData
+        if (bio) updateData.bio = bio;
+        if (morada) updateData.morada = morada;
+
+        if (file) {
+            // Criar uma referência ao caminho onde a imagem será armazenada
+            const fileRef = storageRef(storage, `profile_pictures/${user.uid}`);
+
+            // Fazer upload da imagem para o Firebase Storage
+            uploadBytes(fileRef, file).then((snapshot) => {
+                // Obter a URL de download da imagem
+                getDownloadURL(snapshot.ref).then((downloadURL) => {
+                    // Adicionar a URL da imagem ao objeto de atualização
+                    updateData.img = downloadURL;
+
+                    // Atualizar os dados do utilizador no Firestore
+                    setDoc(userDocRef, updateData, { merge: true })
+                        .then(() => {
+                            // Mostrar mensagem de confirmação
+                            const confirmationMessage = document.getElementById('confirmation-message');
+                            confirmationMessage.style.display = 'block';
+                            confirmationMessage.style.opacity = '1'; // Fade-in
+
+                            // Ocultar a mensagem após 3 segundos
+                            setTimeout(() => {
+                                confirmationMessage.style.opacity = '0'; // Fade-out
+                                setTimeout(() => {
+                                    confirmationMessage.style.display = 'none'; // Esconder após fade-out
+                                }, 500); // Duração do fade-out (500ms)
+                            }, 3000); // 3 segundos de exibição
+                        })
+                        .catch((error) => {
+                            console.error('Erro ao salvar informações:', error);
+                        });
+                }).catch((error) => {
+                    console.error('Erro ao obter URL da imagem:', error);
+                });
+            }).catch((error) => {
+                console.error('Erro ao fazer upload da imagem:', error);
+            });
+        } else {
+            // Caso não haja imagem para fazer upload, apenas atualizar os outros campos
+            setDoc(userDocRef, updateData, { merge: true })
+                .then(() => {
+                    const confirmationMessage = document.getElementById('confirmation-message');
+                    confirmationMessage.style.display = 'block';
+                    confirmationMessage.style.opacity = '1'; // Fade-in
+
+                    setTimeout(() => {
+                        confirmationMessage.style.opacity = '0'; // Fade-out
+                        setTimeout(() => {
+                            confirmationMessage.style.display = 'none'; // Esconder após fade-out
+                        }, 500); // Duração do fade-out (500ms)
+                    }, 3000); // 3 segundos de exibição
+                })
+                .catch((error) => {
+                    console.error('Erro ao salvar informações:', error);
+                });
+        }
+    } else {
+        console.log('Nenhum utilizador autenticado.');
+    }
+});
+
+                   //form do livro
+
+
+                document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+                function submitForm(e) {
+                    e.preventDefault();
+
+                    var name = getElementVal("name");
+                    var msgContent = getElementVal("msgContent");
+                    var bookType = getElementVal("bookType");
+                    var imageFile = document.getElementById("image").files[0];
+
+                    // Upload da imagem
+                    const imageRef = storageRef(storage, 'images/' + imageFile.name);
+                    uploadBytes(imageRef, imageFile).then(() => {
+                        console.log('Imagem enviada com sucesso!');
+                        return getDownloadURL(imageRef);
+                    }).then((imageURL) => {
+                        saveMessages(name, msgContent, bookType, imageURL);
+                        document.querySelector(".alert").style.display = "block";
+                        setTimeout(() => {
+                            document.querySelector(".alert").style.display = "none";
+                        }, 3000);
+                        document.getElementById("contactForm").reset();
+                    }).catch((error) => {
+                        console.error('Erro ao enviar a imagem ou obter o URL:', error);
+                    });
+                }
+                const saveMessages = (name, msgContent, bookType, imageURL) => {
+                    const userId = auth.currentUser.uid;
+                    const userAdsRef = ref(database, `login-e-register/${userId}`);
+
+                    // Obter a data atual e formatá-la no formato "11 de novembro de 2024"
+                    const now = new Date();
+                    const formattedDate = formatDate(now);
+
+                    // Adicionar a data formatada ao objeto que será armazenado
+                    push(userAdsRef, {
+                        name: name,
+                        msgContent: msgContent,
+                        bookType: bookType,
+                        imageURL: imageURL,
+                        publishedDate: formattedDate,
+                    }).then(() => {
+                        displayUserAds(userId); // Atualiza a lista de anúncios
+                    }).catch((error) => {
+                        console.error('Erro ao salvar mensagem:', error);
+                    });
+                };
+
+                // Função para formatar a data no formato "11 de novembro de 2024"
+                function formatDate(date) {
+                    const day = date.getDate();
+                    const monthNames = [
+                        'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+                        'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+                    ];
+                    const month = monthNames[date.getMonth()];
+                    const year = date.getFullYear();
+
+                    return `${day} de ${month} de ${year}`;
+                }
+
+                const getElementVal = (id) => {
+                    return document.getElementById(id).value;
+                };
+
+                function displayUserAds(userId) {
+                    const userAdsRef = ref(database, `login-e-register/${userId}`);
+                    const userAdsSection = document.getElementById("book-list");
+                    userAdsSection.innerHTML = '';
+
+                    get(userAdsRef).then((snapshot) => {
+                        if (snapshot.exists()) {
+                            snapshot.forEach((childSnapshot) => {
+                                const ad = childSnapshot.val();
+                                const adKey = childSnapshot.key; // Pegar a chave do anúncio
+                                const adElement = document.createElement('div');
+                                adElement.classList.add('ad-item');
+                                adElement.innerHTML = `
+                                         <img src="${ad.imageURL}" alt="${ad.name}" "/>
+                                            <h3>${ad.name}</h3>
+                                            <p>Tipo de livro: ${ad.bookType}</p>
+                                            <p>${ad.msgContent}</p>
+                                           
+                                            <button class="contact-btn" onclick="removeAd('${userId}', '${adKey}')">Remover</button>
+                                        `;
+                                userAdsSection.appendChild(adElement);
+                            });
+                        } else {
+                            userAdsSection.innerHTML = '<p>Nenhum anúncio encontrado.</p>';
+                        }
+                    }).catch((error) => {
+                        console.error('Erro ao recuperar os anúncios:', error);
+                    });
+                }
+
+                // Função para remover anúncio
+                function removeAd(userId, adKey) {
+                    const adRef = ref(database, `login-e-register/${userId}/${adKey}`); // Referência ao anúncio
+                    remove(adRef).then(() => {
+                        displayUserAds(userId); // Atualiza a lista após remover
+                    }).catch((error) => {
+                        console.error('Erro ao remover o anúncio:', error);
+                    });
+                }
+
+                // Adicione esta linha para tornar a função acessível globalmente
+                window.removeAd = removeAd;
+
+                // Verifica o estado de autenticação
+                auth.onAuthStateChanged(user => {
+                    if (user) {
+                        // Usuário está autenticado, exibir anúncios
+                        displayUserAds(user.uid);
+                    } else {
+                        // Usuário não está autenticado, redirecionar ou mostrar mensagem
+                        console.log('Usuário não autenticado');
+                    }
+                });
+
+
+
+
+
+
+
+            </script>
+
+
+
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/perfil.js"></script>
+    <script src="../js/register.js"></script>
+    <script type="module" src="../js/listagem.js"></script>
+
+
+
+
+
+</body>
+
+</html>

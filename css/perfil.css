@@ -1,0 +1,472 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #ffefd5;
+
+    color: white;
+    padding: 20px;
+}
+
+
+
+.sidebar ul {
+    list-style: none;
+    color: #725b43;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    color: #725b43;
+}
+
+.sidebar ul li a {
+    color: #8f795d;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a.active, .sidebar ul li a:hover {
+    background-color: #d1bea8;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+.section {
+    display: none;
+    
+}
+
+.section.active {
+    display: block;
+}
+
+/* Foto de perfil centralizada no topo */
+.profile-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+#upload-photo {
+    margin-top: 10px;
+}
+
+/* Informações pessoais alinhadas à esquerda */
+.profile-info {
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+#morada-text{
+    height: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #8f795d;;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color:#deb887 ;
+}
+
+.go-back-1 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+  }
+  
+  .go-back-1 button {
+    padding: 10px 20px;
+    background-color: #d3b99b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .go-back-1 button:hover {
+    background-color: #957042;
+  }
+
+
+ 
+/* Estilo Geral para as postagens */
+.container {
+    background-color: #fefefe;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    padding: 3rem 3rem 1rem;
+    max-width: 700px;
+    margin: 2rem auto;
+    font-family: 'Arial', sans-serif;
+    margin-top: 1rem;
+}
+
+/* Título da Seção */
+.add-book-section h2 {
+    text-align: center;
+    color: #725b43;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Estilo para a descrição ou subtítulo */
+.add-book-section p {
+    text-align: center;
+    color: #6d6d6d;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Estilo dos Inputs */
+.inputBox {
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+     margin: auto;
+    font-size: 20px;
+    color: #987654;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+.section h1::after{
+    content:'';
+width: 50px;
+height: 35px;
+background: linear-gradient(#987654,#f5deb3);
+position: absolute;
+top: -20px;
+left: 25rem;
+z-index: -1;
+transform: rotate(10deg);
+border-top-left-radius: 35px;
+border-bottom-right-radius: 35px;
+}
+
+.inputBox label {
+    display: block;
+    font-weight: 600;
+    color: #725b43;
+    margin-bottom: 8px;
+}
+
+/* Estilo dos Inputs, Textarea e Select */
+.inputBox input,
+.inputBox textarea,
+.inputBox select {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    color: #4d4d4d;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Efeito ao focar nos Inputs */
+.inputBox input:focus,
+.inputBox textarea:focus,
+.inputBox select:focus {
+    border-color: #a67b5b;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilização do Botão */
+.inputBox button {
+    width: 100%;
+    padding: 15px;
+    background-color: #a67b5b;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito ao passar o mouse sobre o Botão */
+.inputBox button:hover {
+    background-color: #8c6448;
+    transform: scale(1.02);
+}
+
+/* Efeito ao clicar no Botão */
+.inputBox button:active {
+    transform: scale(0.98);
+}
+
+/* Ajuste para o Textarea */
+.inputBox textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Layout responsivo */
+@media (max-width: 768px) {
+    .container {
+        padding: 2.5rem;
+    }
+    .add-book-section h2 {
+        font-size: 1.8rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .inputBox input,
+    .inputBox textarea,
+    .inputBox select,
+    .inputBox button {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+}
+
+
+/* Estilização da Mensagem de Sucesso */
+#successMessage {
+    padding: 15px;
+    background-color: #4caf50; /* Verde */
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: none; /* Escondido inicialmente */
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 5px;
+    margin: 0 auto;
+    
+    
+  }
+    
+    .ad-item {
+        background-color: #e6e3e1;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Alinha os itens no início */
+        
+        
+    }
+    
+    .ad-item img {
+        width: 100%;
+        height: 50%; 
+        object-fit: cover; 
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .ad-item h3 {
+        font-size: 1.5em;
+        color: #333;
+        margin: 10px 0;
+        background-color: #e6e3e1;
+    }
+    
+    .ad-item p {
+        margin: 8px 0;
+        background-color: #e6e3e1;
+        color: #666;
+        font-size: 1em;
+    }
+    
+    .contact-btn {
+        background-color: #8f795d;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 3rem;
+        margin-top: auto; /* Empurra o botão para o final do item */
+        margin-bottom: 1rem;
+        max-width: 200px;
+        
+        
+    }
+    
+    .contact-btn:hover {
+        background-color: #725b43;
+    
+    }
+
+ 
+ /* Estilizar o submenu */
+.sidebar .submenu {
+    display: none;
+    padding-left: 15px; /* Para alinhar um pouco à direita */
+}
+
+.sidebar li:hover .submenu {
+    display: block;
+}
+
+.confirmation-message {
+    display: none; 
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 15px;
+    border-radius: 5px;
+    position: fixed; 
+    top: 20px;
+    right: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+    z-index: 1000; 
+}
+
+
+#profileImage{
+       
+        margin-bottom: 2rem;
+        
+        cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-content {
+        margin-top: 20px;
+    }
+
+    .profile-photo {
+        margin-bottom: 15px;
+    }
+
+    .book-list {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 100;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .sidebar ul li a {
+        font-size: 16px;
+    }
+}

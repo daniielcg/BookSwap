@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ===== Iconscout CSS ===== -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <!-- ===== CSS ===== -->
+  <link rel="stylesheet" href="../css/login&register.css" />
+  <title>Entrar & Registo</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="forms">
+      <div class="form login">
+        <span class="title">Entrar</span>
+
+
+        <form action="#">
+
+            <!-- Elemento para exibir mensagens de erro -->
+            <div id="error-message" class="error-message"></div>
+
+
+
+          <div class="input-field">
+            <input type="text" placeholder="Introduza o email" id="emailLo" required />
+            <i class="uil uil-envelope icon"></i>
+          </div>
+          <div class="input-field">
+            <input type="password" placeholder="Introduza a senha" id="senhaLo" required />
+            <i class="uil uil-lock icon"></i>
+          </div>
+
+          <div class="checkbox-text">
+            <div class="checkbox-content">
+              <input type="checkbox" id="logCheck" />
+              <label for="logCheck" class="text">Relembre-me</label>
+            </div>
+
+            <a href="../html/reset.html" class="text">Esqueceu a senha?</a>
+          </div>
+
+          <div class="input-field button">
+
+            <button id="submit2" type="submit">Entrar</button>
+
+          
+          </div>
+        </form>
+
+        <div class="login-signup">
+          <span class="text">
+            Não és membro?
+            <a href="#" class="text signup-link">Registo</a>
+          </span>
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <div class="form signup">
+        <span class="title">Registo</span>
+
+        <form action="#">
+          <div class="alert" id="successMessage" style="display: none;">Conta criada com sucesso!</div>
+
+          <div class="alert error" id="errorMessage" style="display: none;">
+            <p>Erro: mensagem do erro aqui</p>
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Nome de utilizador" id="nome" required />
+            <i class="uil uil-user"></i>
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Introduza o email" id="email" required />
+            <i class="uil uil-envelope icon"></i>
+          </div>
+          <div class="input-field">
+            <input type="password" placeholder="Introduza a senha" id="password" required />
+            <i class="uil uil-lock icon"></i>
+          </div>
+
+
+          <div class="checkbox-text">
+            <div class="checkbox-content">
+              <input type="checkbox" id="termCon" />
+              <label for="termCon" class="text">Aceitei todos os termos e condições</label>
+            </div>
+          </div>
+
+          <div class="input-field button">
+            <button id="submit" type="submit">Registar</button>
+          </div>
+        </form>
+
+        <div class="login-signup">
+          <span class="text">
+            Já és membro?
+            <a href="#" class="text login-link">Entrar</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Voltar -->
+  <div class="go-back">
+    <button onclick="goBack()">Voltar</button>
+  </div>
+
+
+
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+  
+  <script type="module" src="../js/register.js" defer></script>
+  <script type="module" src="../js/login.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+
+body {
+    background-color: #ffefd5;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    width: 700px;
+    background-color: #ffefd5;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #987654 ;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #ffefd5;
+}
+
+ .span-d{
+    background-color: #ffefd5;
+ }
+#bio-text{
+    margin-top: 10rem;
+    background-color:#ffefd5;
+ } 
+
+
+.profile-picture{
+    background-color: #ffefd5;
+}
+
+
+.profile-picture img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+    background-color:#ffefd5;
+    margin-left: 15px;
+    
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #7a5c3e;
+    background-color:#ffefd5;
+}
+
+.profile-location,
+.profile-date,
+.profile-online {
+    margin: 3px 0;
+    color: #987654;
+    font-size: 14px;
+    background-color:#ffefd5;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.profile-rating {
+    background-color:#ffefd5;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #987654;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating-box {
+    display: flex;
+    align-items: center;
+    color: #7a5c3e;
+    background-color:#ffefd5;
+
+}
+
+.rating-icon {
+    background-color:#ebdcc5;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 10px;
+  
+
+}
+
+.rating-info {
+    color:  #987654;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    
+}
+
+.p-d{
+    background-color: #ffefd5;
+
+}
+
+.title-tex p{
+    color: #987654;
+    font-size: 30px;
+    margin-left: 1.9rem;
+    margin-top: 6rem;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #987654; 
+
+}
+
+  
+
+    

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frequently Asked Questions</title>
+
+  <link rel="stylesheet" href="../css/comofunciona.css" />
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/index.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <header class="navbar">
+    <h1 class="Logo">Book Swap</h1>
+    <nav>
+      <ul class="nav__links">
+        <li><a href="../html/listagens.html">Listagens</a></li>
+        <li><a href="../html/comofunciona.html">Como funciona</a></li>
+        <li><a href="../html/contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="profile" id="profileContainer">
+      <!-- Botão de Login, escondido se logado -->
+      <a href="../html/login.html" id="login-btn">
+        <button>Entrar</button>
+      </a>
+
+
+      <img src="../img/user.jpg" alt="Profile" id="profileImage" style="display: none;">
+      <div class="dropdown" id="dropdownMenu">
+
+
+        <a href="../html/perfil.html" class="user-link">
+          <i class="fas fa-user icon"></i>
+          <span id="userName">User</span>
+      </a>
+      <a href="../html/conversa.html" class="help-item"><span><i class="fa-solid fa-comment icon"></i>Conversas</span></a>
+        <a href="#" id="logout-btn"><span><i class="fas fa-sign-out-alt icon"></i>Sair</span></a>
+      </div>
+    </div>
+  </header>
+
+  <header class="header1">
+    <h1 class="header-title">Como Funciona?</h1>
+    <p class="header-subtitle">Descobre como podes trocar os teus livros usados de forma simples!</p>
+  </header>
+
+  
+  <div class="timeline">
+    <div class="container left">
+      <div class="content">
+        <h2>Cria uma Conta</h2>
+        <p>Primeiro, regista-te no nosso site para poderes começar a trocar os teus livros. A criação de uma conta é rápida e gratuita!
+        </p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h2>Publica os Teus Livros</h2>
+        <p>Adiciona os livros que queres trocar. Podes adicionar uma descrição, fotos, e definir o que procuras em troca.</p>
+
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h2>Encontra Livros</h2>
+        <p>Navega pelas listagens e encontra livros que te interessam. Podes entrar em contacto com outros utilizadores para combinar uma troca.</p>
+      </div>
+    </div>
+    <div class="container right">
+      <div class="content">
+        <h2>Faz a Troca</h2>
+        <p>Depois de combinar a troca, envia ou entrega o livro pessoalmente. No final, deixa uma avaliação sobre a experiência para ajudar outros utilizadores.</p>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="wrapper">
+
+    <h1>Perguntas frequentes</h1>
+
+    <div class="faq">
+      <button class="accordion">
+        Como funciona o processo de troca de livros?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="pannel">
+        <p>
+          Podes listar os teus livros e procurar outros disponíveis. Quando encontrares um livro que te interessa, podes
+          fazer uma proposta de troca ao dono do livro.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="accordion">
+        Preciso pagar para usar o site?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="pannel">
+        <p>
+          O registo e a troca de livros são gratuitos. No entanto, podes ser responsável pelos custos de envio,
+          dependendo do acordo entre os utilizadores.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="accordion">
+        Posso vender livros, além de trocar?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="pannel">
+        <p>
+          Atualmente, o site é focado apenas em trocas. No entanto, poderás incluir uma oferta de venda na descrição do
+          teu livro.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="accordion">
+        Como posso garantir a segurança da troca?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="pannel">
+        <p>
+          Recomendamos combinar trocas com utilizadores bem avaliados e, sempre que possível, optar por encontrar-te em
+          pessoa. Caso seja por envio, usar um serviço de correio registado é uma boa prática.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="accordion">
+        Como faço para listar um livro?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="pannel">
+        <p>
+          Após te registares, clica em "Adicionar Livro", preenche as informações do livro (título, autor, condição) e
+          faz o upload de uma imagem.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq">
+      <button class="accordion">
+        Há limites para o número de livros que posso trocar?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="pannel">
+        <p>
+          Não há limites definidos. Podes trocar quantos livros quiseres, desde que ambos os utilizadores concordem com
+          as trocas.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        this.parentElement.classList.toggle("active");
+
+        var pannel = this.nextElementSibling;
+
+        if (pannel.style.display === "block") {
+          pannel.style.display = "none";
+        } else {
+          pannel.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+  <footer>
+    <div class="footerContainer">
+      <div class="socialIcons">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-google-plus"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <div class="footerNav">
+        <ul>
+          <li><a href="">Sobre</a></li>
+          <li><a href="">FAQS</a></li>
+          <li><a href="">Contacto</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footerBottom">
+      <p>Copyright &copy;2024; Designed by <span class="designer">Daniel Gonçalves</span></p>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/login.js" defer></script>
+  <script type="module" src="../js/drop.js"></script>
+  <script type="module" src="../js/all.js"></script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+body{
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  padding: 25px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.ad-item {
+  background-color: #efdecd;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  position: relative;
+}
+
+.ad-item img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.ad-item h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 10px 0;
+  background-color: #efdecd;
+}
+
+.ad-item p {
+  margin: 8px 0;
+  background-color: #efdecd;
+  color: #666;
+  font-size: 1em;
+}
+
+.ad-footer {
+   background-color: #efdecd;
+ gap: 10px; /* Espaçamento entre os itens */
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ad-footer .view-profile-btn{
+  background-color: #987654;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 2rem; /* Espaço entre o botão e a imagem de perfil */
+  width: 80%; /* Ajuste o tamanho conforme necessário */
+  max-width: 200px; /* Limita a largura máxima do botão */
+  
+}
+
+.contact-btn {
+  background-color: #987654;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 2rem; /* Espaço entre o botão e a imagem de perfil */
+  width: 80%; /* Ajuste o tamanho conforme necessário */
+  max-width: 200px; /* Limita a largura máxima do botão */
+}
+
+.contact-btn:hover {
+  background-color: #725b43;
+}
+
+.ad-footer .profile-image {
+  width: 40px; /* Tamanho da imagem de perfil */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ad-footer a {
+  background-color: #efdecd;
+}
+
+.ad-footer .date {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px; /* Espaçamento entre a imagem e a data */
+}
+
+
+
+
+
+
+.login-message {
+  
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px auto; 
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 80%; 
+  max-width: 600px; 
+  margin-top:2rem;
+}
+
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50%;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 4rem;
+}
+
+
+.search-container input {
+  width: 100%;
+  padding: 10px 50px 10px 40px; 
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  background-color: white;
+
+}
+
+
+.search-container .search-icon {
+  position: absolute;
+  left: 15px;
+  font-size: 20px;
+  color: #888;
+  background-color: white;
+
+}
+
+
+.search-container .clear-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+  display: none; 
+  background-color: white;
+  
+}
+
+/* Estilo para o input quando estiver em foco */
+.search-container input:focus {
+  box-shadow: 0 0 8px rgba(139, 115, 47, 0.5);
+}
+
+/* Estilo do hover sobre os ícones */
+.search-container .clear-icon:hover,
+.search-container .search-icon:hover {
+  color: #000;
+}
+
+
+
+/* Media Queries para tornar a página responsiva */
+@media (max-width: 768px) {
+  .book-list {
+    padding: 15px;
+    margin-top: 2rem;
+  }
+
+  .ad-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ad-item img {
+    height: 60%;
+  }
+
+  .ad-footer {
+    padding: 10px;
+  }
+
+  .ad-footer .view-profile-btn,
+  .contact-btn {
+    width: 90%;
+    max-width: 180px;
+  }
+
+  .search-container {
+    width: 80%;
+  }
+
+  .login-message {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-list {
+    padding: 10px;
+    margin-top: 1rem;
+  }
+
+  .search-container {
+    width: 90%;
+  }
+
+  .ad-item img {
+    height: 70%;
+  }
+
+  .ad-footer .view-profile-btn,
+  .contact-btn {
+    width: 100%;
+    max-width: none;
+  }
+
+  .login-message {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

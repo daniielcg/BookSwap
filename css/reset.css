@@ -1,0 +1,41 @@
+.alert-message {
+    display: none; /* Inicialmente escondido */
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 50px;
+    background-color: hsl(134, 41%, 88%);
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .alert-message.show {
+    display: block; /* Mostrar quando a classe 'show' for adicionada */
+  }
+
+  .input-field.button button {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #c19a6b; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .input-field.button button:hover {
+    background-color: #7e6444;; /* Verde mais escuro no hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve ao passar o mouse */
+  }
+  
+  .input-field.button button:active {
+    background-color: #987654; /* Cor mais escura ao clicar */
+    box-shadow: none; /* Remove a sombra ao clicar */
+  }
+  
+  

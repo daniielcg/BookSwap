@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book Swap</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/perfil_anu.css">
+    <link rel="stylesheet" href="../css/listagens.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+
+    <body>
+        <header class="navbar">
+            <h1 class="Logo">Book Swap</h1>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="../html/listagens.html">Listagens</a></li>
+                    <li><a href="../html/comofunciona.html">Como funciona</a></li>
+                    <li><a href="../html/contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="profile" id="profileContainer">
+                <!-- Botão de Login, escondido se logado -->
+                <a href="../html/login.html" id="login-btn">
+                  <button>Entrar</button>
+                </a>
+          
+          
+                <img src="../img/user.jpg" alt="Profile" id="profileImage" style="display: none;">
+                <div class="dropdown" id="dropdownMenu">
+          
+          
+                  <a href="../html/perfil.html" class="user-link">
+                    <i class="fas fa-user icon"></i>
+                    <span>Perfil</span>
+                </a>
+                <a href="../html/conversa.html" class="help-item"><span><i class="fa-solid fa-comment icon"></i>Conversas</span></a>
+                  <a href="#" id="logout-btn"><span><i class="fas fa-sign-out-alt icon"></i>Sair</span></a>
+                </div>
+              </div>
+        </header>
+
+
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-picture">
+                    <img src="../img/user.jpg" alt="Foto de perfil" id="profileImageHeader" style="display: none;">
+                </div>
+                
+                <div class="profile-info">
+                    <h2 class="profile-name"><span class="span-d" id="userName"></span></h2>
+                    <p class="profile-date">Na BookSwap desde <span class="span-d" id="dataCriacao"></span> </p>
+                    <p class="profile-location"><span class="span-d" id="morada-text"></p>
+                    
+                    <p class="profile-online"><span class="span-d-e" id="bio-text"></p>
+                </div>
+                
+            </div>
+
+            <div class="profile-rating">
+                <div class="rating-box">
+                    <div class="rating-icon">?</div>
+                    <p class="p-d">Este anunciante ainda não recebeu nenhuma classificação</p>
+                </div>
+                
+            </div>
+
+
+           
+        </div>
+      
+
+        <div class="title-tex">
+            <p>Livros Publicados:</p>
+          
+
+        </div>
+
+        <section id="bookListSection" class="book-list">
+            <!-- Aqui será renderizada a listagem de livros dinamicamente via JavaScript -->
+        </section>
+    
+        
+   
+
+    
+    <footer>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="">Sobre</a></li>
+                    <li><a href="">FAQS</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy;2023; Designed by <span class="designer">Daniel Gonçalves</span></p>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/perfil_anu.js"></script>
+    <script type="module" src="../js/login.js" defer></script>
+    <script type="module" src="../js/all.js"></script>
+    <script type="module" src="../js/AL.JS"></script>
+    <script type="module" src="../js/drop.js"></script>
+    
+   
+
+</body>
+
+</html>
