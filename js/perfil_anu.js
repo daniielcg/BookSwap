@@ -94,13 +94,11 @@ function displayUserAds() {
     }).catch((error) => {
         console.error('Erro ao carregar anúncios do usuário:', error);
     });
-}
-// Função para carregar o perfil do usuário
+}// Função para carregar o perfil do usuário
 function loadUserProfile() {
     const uid = getUidFromUrl(); // Obtém o UID
 
     if (!uid) {
-        
         return;
     }
 
@@ -110,14 +108,20 @@ function loadUserProfile() {
         if (snapshot.exists()) {
             const userData = snapshot.data();
 
-            if (userData && userData.nome && userData.morada && userData.bio && userData.dataCriacao) {
-                document.getElementById('userName').innerText = userData.nome;
-                document.getElementById('morada-text').innerText = userData.morada;
-                document.getElementById('bio-text').innerText = userData.bio;
-                document.getElementById('dataCriacao').innerText = userData.dataCriacao;
-            } 
-        } 
-    })
+            // Exibe os dados do usuário, se disponíveis
+            if (userData) {
+                // Defina valores padrão caso os campos não existam
+                document.getElementById('userName').innerText = userData.nome || 'Nome não definido';
+                document.getElementById('morada-text').innerText = userData.morada || '----------';
+                document.getElementById('bio-text').innerText = userData.bio || '----------';
+                document.getElementById('dataCriacao').innerText = userData.dataCriacao || 'Data de criação não disponível';
+            }
+        } else {
+            console.error('Usuário não encontrado no Firestore');
+        }
+    }).catch((error) => {
+        console.error('Erro ao carregar dados do perfil:', error);
+    });
 }
 
 // Chama as funções ao carregar a página

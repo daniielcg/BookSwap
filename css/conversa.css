@@ -32,11 +32,26 @@ h2 {
 }
 
 .conversa-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #987654;
+    border-radius: 5px;
     margin-bottom: 10px;
-    margin-left: 1rem;
-    
-    
 }
+.trash-icon {
+    color: #987654;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+
+.trash-icon:hover {
+    transform: scale(1.2);
+}
+
 
 
 p{
@@ -53,5 +68,6 @@ p{
 }
 
 .conversa-link:hover {
-    background-color: #45a049;
+    background-color: #6c543b;
 }
+

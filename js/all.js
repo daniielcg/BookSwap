@@ -69,3 +69,8 @@ window.addEventListener('load', function () {
 
 
 
+if (window.innerWidth <= 768) { // Ajusta o limite conforme necessário
+    window.location.href = "../html/aviso.html";
+}
+
+

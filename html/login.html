@@ -22,8 +22,8 @@
 
         <form action="#">
 
-            <!-- Elemento para exibir mensagens de erro -->
-            <div id="error-message" class="error-message"></div>
+          <!-- Elemento para exibir mensagens de erro -->
+          <div id="error-message" class="error-message"></div>
 
 
 
@@ -31,10 +31,14 @@
             <input type="text" placeholder="Introduza o email" id="emailLo" required />
             <i class="uil uil-envelope icon"></i>
           </div>
+
           <div class="input-field">
             <input type="password" placeholder="Introduza a senha" id="senhaLo" required />
             <i class="uil uil-lock icon"></i>
-          </div>
+            <i class="uil uil-eye-slash" id="togglePassword" style="cursor: pointer;"></i> <!-- Ícone do olho -->
+        </div>
+        
+
 
           <div class="checkbox-text">
             <div class="checkbox-content">
@@ -49,7 +53,7 @@
 
             <button id="submit2" type="submit">Entrar</button>
 
-          
+
           </div>
         </form>
 
@@ -79,10 +83,14 @@
             <input type="text" placeholder="Introduza o email" id="email" required />
             <i class="uil uil-envelope icon"></i>
           </div>
+
           <div class="input-field">
-            <input type="password" placeholder="Introduza a senha" id="password" required />
+            <input type="password" placeholder="Introduza a senha" id="senhaReg" required />
             <i class="uil uil-lock icon"></i>
-          </div>
+            <i class="uil uil-eye-slash" id="togglePasswordReg" style="cursor: pointer;"></i> <!-- Ícone do olho -->
+        </div>
+        
+
 
 
           <div class="checkbox-text">
@@ -118,10 +126,58 @@
   <script>
     function goBack() {
       window.history.back();
+
+
+
     }
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    // Função para alternar visibilidade da senha (Login)
+    const togglePassword = document.getElementById('togglePassword');
+    const senhaLo = document.getElementById('senhaLo');
+
+    if (togglePassword && senhaLo) {
+        togglePassword.addEventListener('click', function () {
+            // Se a senha estiver oculta, mostra a senha
+            if (senhaLo.type === 'password') {
+                senhaLo.type = 'text';
+                togglePassword.classList.remove('uil-eye-slash');
+                togglePassword.classList.add('uil-eye');
+            } else {
+                // Se a senha estiver visível, oculta a senha
+                senhaLo.type = 'password';
+                togglePassword.classList.remove('uil-eye');
+                togglePassword.classList.add('uil-eye-slash');
+            }
+        });
+    }
+
+    // Função para alternar visibilidade da senha (Registo)
+    const togglePasswordReg = document.getElementById('togglePasswordReg');
+    const senhaReg = document.getElementById('senhaReg');
+
+    if (togglePasswordReg && senhaReg) {
+        togglePasswordReg.addEventListener('click', function () {
+            // Se a senha estiver oculta, mostra a senha
+            if (senhaReg.type === 'password') {
+                senhaReg.type = 'text';
+                togglePasswordReg.classList.remove('uil-eye-slash');
+                togglePasswordReg.classList.add('uil-eye');
+            } else {
+                // Se a senha estiver visível, oculta a senha
+                senhaReg.type = 'password';
+                togglePasswordReg.classList.remove('uil-eye');
+                togglePasswordReg.classList.add('uil-eye-slash');
+            }
+        });
+    }
+});
+
   </script>
 
-  
+
   <script type="module" src="../js/register.js" defer></script>
   <script type="module" src="../js/login.js" defer></script>
   <script type="module" src="../js/script.js" defer></script>

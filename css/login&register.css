@@ -255,4 +255,9 @@ body {
     
 }
 
- 
+
+
+#togglePassword, #togglePasswordReg {
+   left: 21rem;
+   color: #957042;
+  }
