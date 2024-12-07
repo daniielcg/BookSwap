@@ -69,7 +69,7 @@ submit.addEventListener('click', async function (event) {
 
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
+    const password = document.getElementById('senhaReg').value.trim();
 
     hideError();
 
