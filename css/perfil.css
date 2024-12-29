@@ -366,10 +366,8 @@ border-bottom-right-radius: 35px;
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        margin-top: 3rem;
-        margin-top: auto; /* Empurra o botão para o final do item */
-        margin-bottom: 1rem;
         max-width: 200px;
+        margin-top: 1rem;
         
         
     }
